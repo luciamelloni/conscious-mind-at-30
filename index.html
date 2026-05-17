@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Conscious Mind at 30 — Bochum, 18–19 June 2026</title>
+<meta name="description" content="A workshop celebrating 30 years of David Chalmers' The Conscious Mind. Kunstmuseum Bochum, 18–19 June 2026. Organized by Lucia Melloni and Tobias Schlicht." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,30..100,0..1&family=DM+Sans:opsz,wght@9..40,300..700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #F2EDE0;
+    --bg-alt: #EAE3D2;
+    --ink: #11192B;
+    --ink-soft: #2A3447;
+    --muted: #6B6755;
+    --rule: #C9C1AC;
+    --accent: #A8662C;
+    --accent-soft: #C68A4E;
+    --display: "Fraunces", "Times New Roman", serif;
+    --body: "DM Sans", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.6;
+    font-feature-settings: "ss01", "ss02";
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* subtle paper grain */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.4;
+    mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.06 0 0 0 0 0.06 0 0 0 0 0.1 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+  a:hover { border-bottom-color: var(--accent); color: var(--ink); }
+
+  /* ---------- NAV ---------- */
+  nav.topnav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(242, 237, 224, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 14px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .nav-brand {
+    font-family: var(--display);
+    font-weight: 500;
+    font-style: italic;
+    font-size: 17px;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--ink);
+  }
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    color: var(--ink-soft);
+    border-bottom: none;
+  }
+  .nav-links a:hover { color: var(--accent); }
+
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+  }
+
+  /* ---------- HERO ---------- */
+  header.hero {
+    position: relative;
+    padding: 80px 32px 100px;
+    max-width: 1240px;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+    display: inline-block;
+  }
+  h1.title {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(48px, 9vw, 132px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 24px;
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+  }
+  h1.title em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+    font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  }
+  .subtitle {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(20px, 2.4vw, 28px);
+    color: var(--ink-soft);
+    max-width: 740px;
+    line-height: 1.4;
+    margin-bottom: 56px;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding-top: 40px;
+    border-top: 1px solid var(--rule);
+  }
+  .meta-grid .meta-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .meta-grid .meta-value {
+    font-family: var(--display);
+    font-size: 20px;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  @media (max-width: 720px) {
+    .meta-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section {
+    padding: 100px 32px;
+    max-width: 1240px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  section + section { border-top: 1px solid var(--rule); }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 64px;
+    margin-bottom: 64px;
+  }
+  @media (max-width: 900px) {
+    .section-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
+  }
+  .section-num {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+  .section-num span {
+    display: inline-block;
+    margin-right: 12px;
+  }
+  h2.section-title {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    font-variation-settings: "opsz" 96, "SOFT" 50;
+  }
+  h2.section-title em { font-style: italic; color: var(--accent); }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+  @media (max-width: 900px) {
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+  .about-grid p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  .about-grid p:first-child::first-line {
+    font-family: var(--display);
+    font-style: italic;
+  }
+  .pull-quote {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 1.35;
+    color: var(--ink);
+    padding-left: 24px;
+    border-left: 2px solid var(--accent);
+    margin: 32px 0;
+  }
+
+  /* ---------- SCHEDULE ---------- */
+  .day-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .day-tab {
+    padding: 16px 24px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    font-family: var(--display);
+    font-size: 18px;
+    color: var(--muted);
+    transition: color 0.2s, border-color 0.2s;
+    font-style: italic;
+    font-weight: 400;
+  }
+  .day-tab.active {
+    color: var(--ink);
+    border-bottom-color: var(--accent);
+  }
+  .day-tab:hover { color: var(--ink); }
+
+  .day-panel { display: none; }
+  .day-panel.active { display: block; }
+
+  .schedule-list { list-style: none; }
+  .schedule-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 32px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: baseline;
+  }
+  .schedule-item:last-child { border-bottom: none; }
+  .schedule-time {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .schedule-event {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .speaker-name {
+    font-weight: 500;
+    color: var(--ink);
+    margin-right: 8px;
+  }
+  .speaker-affil {
+    color: var(--muted);
+    font-size: 14px;
+    font-style: italic;
+  }
+  .talk-title {
+    display: block;
+    margin-top: 4px;
+    color: var(--ink-soft);
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 17px;
+  }
+  .schedule-item.break {
+    color: var(--muted);
+    font-style: italic;
+  }
+  .schedule-item.break .schedule-event {
+    font-family: var(--display);
+    color: var(--muted);
+  }
+
+  @media (max-width: 700px) {
+    .schedule-item { grid-template-columns: 70px 1fr; gap: 16px; }
+    .schedule-time { font-size: 18px; }
+  }
+
+  /* ---------- SPEAKERS ---------- */
+  .speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+  }
+  .speaker-card {
+    padding: 28px 24px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg);
+    transition: background 0.3s ease;
+  }
+  .speaker-card:hover {
+    background: var(--bg-alt);
+  }
+  .speaker-card .name {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .speaker-card .affil {
+    font-size: 13px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- POSTERS ---------- */
+  .posters-intro {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 700px;
+    margin-bottom: 32px;
+  }
+  details.poster {
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0;
+  }
+  details.poster:first-of-type { border-top: 1px solid var(--rule); }
+  details.poster summary {
+    cursor: pointer;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: center;
+  }
+  details.poster summary::-webkit-details-marker { display: none; }
+  details.poster summary::after {
+    content: "+";
+    font-family: var(--display);
+    font-size: 24px;
+    color: var(--accent);
+    transition: transform 0.2s;
+  }
+  details.poster[open] summary::after {
+    content: "−";
+  }
+  .poster-author {
+    font-family: var(--display);
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .poster-author .affil {
+    font-family: var(--body);
+    font-size: 13px;
+    color: var(--muted);
+    margin-left: 8px;
+    font-style: italic;
+  }
+  .poster-title {
+    margin-top: 12px;
+    padding-left: 16px;
+    border-left: 2px solid var(--accent-soft);
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 16px;
+  }
+
+  /* ---------- VENUE / REGISTER ---------- */
+  .venue-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+  @media (max-width: 900px) {
+    .venue-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+  .info-block h3 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .info-block p { margin-bottom: 14px; color: var(--ink-soft); }
+  .info-block address {
+    font-style: normal;
+    line-height: 1.7;
+    color: var(--ink);
+    font-family: var(--display);
+    font-size: 19px;
+  }
+  .register-cta {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 14px 28px;
+    background: var(--ink);
+    color: var(--bg);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: none;
+    transition: background 0.2s;
+  }
+  .register-cta:hover {
+    background: var(--accent);
+    color: var(--bg);
+    border-bottom: none;
+  }
+  .deadline {
+    font-family: var(--display);
+    font-style: italic;
+    color: var(--accent);
+    font-size: 17px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 60px 32px 40px;
+    border-top: 1px solid var(--rule);
+    background: var(--bg-alt);
+    position: relative;
+    z-index: 2;
+  }
+  .footer-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+  }
+  @media (max-width: 700px) {
+    .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+  }
+  .footer-inner h4 {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .footer-inner p, .footer-inner a {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .copyright {
+    max-width: 1240px;
+    margin: 40px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ---------- ANIMATIONS ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: reveal 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  }
+  @keyframes reveal {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.25s; }
+  .delay-3 { animation-delay: 0.4s; }
+  .delay-4 { animation-delay: 0.55s; }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="nav-inner">
+    <span class="nav-brand">The Conscious Mind at 30</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#speakers">Speakers</a></li>
+      <li><a href="#posters">Posters</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#register">Register</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow reveal">A Workshop · Bochum · 18–19 June 2026</div>
+  <h1 class="title reveal delay-1">The <em>Conscious</em><br>Mind at 30</h1>
+  <p class="subtitle reveal delay-2">
+    Thirty years after David Chalmers' landmark book, philosophers and scientists gather at Kunstmuseum Bochum to ask what we have learned, and what remains hard.
+  </p>
+
+  <div class="meta-grid reveal delay-3">
+    <div>
+      <div class="meta-label">Dates</div>
+      <div class="meta-value">18 – 19 June<br>2026</div>
+    </div>
+    <div>
+      <div class="meta-label">Venue</div>
+      <div class="meta-value">Kunstmuseum<br>Bochum</div>
+    </div>
+    <div>
+      <div class="meta-label">Organized by</div>
+      <div class="meta-value">Lucia Melloni<br>Tobias Schlicht</div>
+    </div>
+    <div>
+      <div class="meta-label">Registration</div>
+      <div class="meta-value">Free · by<br>1 April 2026</div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="section-head">
+    <div class="section-num"><span>01</span>About</div>
+    <h2 class="section-title">Looking back, <em>looking forward</em>.</h2>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p>In 1996, David Chalmers' <em>The Conscious Mind. In Search of a Fundamental Theory</em> (Oxford University Press) shook the philosophy of mind by presenting rigorous philosophical arguments and ingenious thought experiments against the physicalistic mainstream. Chalmers introduced the hard problem of consciousness and offered a range of non-reductive approaches to consciousness.</p>
+      <p>When Chalmers' book appeared, the prevailing assumption was that consciousness would yield to neuroscience as soon as the science caught up. Thirty years later the science has caught up considerably, with brain imaging, large-scale adversarial collaborations, and rapidly advancing AI all reshaping the empirical landscape and raising new questions about artificial consciousness.</p>
+    </div>
+    <div>
+      <p>Incidentally, the date of the conference also marks the 70th anniversary of the famous Dartmouth conference (18 June 1956) where the term <em>artificial intelligence</em> was coined.</p>
+      <div class="pull-quote">
+        Yet the hard problem Chalmers introduced — why physical processes give rise to subjective experience at all — remains unsolved, and, by some lights, unsolvable on materialist terms.
+      </div>
+      <p>In this workshop we celebrate the massive influence of <em>The Conscious Mind</em> and look forward to the future of the science of consciousness.</p>
+    </div>
+  </div>
+</section>
+
+<section id="schedule">
+  <div class="section-head">
+    <div class="section-num"><span>02</span>Schedule</div>
+    <h2 class="section-title">Two days of <em>dialogue</em>.</h2>
+  </div>
+
+  <div class="day-tabs" role="tablist">
+    <button class="day-tab active" data-day="thu" role="tab">Thursday, 18 June</button>
+    <button class="day-tab" data-day="fri" role="tab">Friday, 19 June</button>
+  </div>
+
+  <div class="day-panel active" id="thu">
+    <ul class="schedule-list">
+      <li class="schedule-item">
+        <div class="schedule-time">09.00</div>
+        <div class="schedule-event">
+          <span class="speaker-name">Welcome</span> by Lucia Melloni & Tobias Schlicht
+        </div>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-time">09.15</div>
+        <div class="schedule-event">
+          <span class="speaker-name">David J. Chalmers</span><span class="speaker-affil">NYU</span>
+          <span class="talk-title">The Conscious Mind at 30. Looking back and looking forward</span>
+        </div>
+      </li>
+      <li class="schedule-item break"><div class="schedule-time">10.30</div><div class="schedule-event">Coffee Break</div></li>
+      <li class="schedule-item">
+        <div class="schedule-time">10.45</div>
+        <div class="schedule-event">
+          <span class="speaker-name">Martine Nida-Rümelin</span><span class="speaker-affil">Fribourg</span>
+          <span class="talk-title">Easy Problems are Rare</span>
+        </div>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-time">11.45</div>
+        <div class="schedule-event">
+          <span class="speaker-name">Keith Frankish</span><span class="speaker-affil">Crete</span>
+          <span class="talk-title">The Mystery of Chalmers and Dennett: A Tale of Two Paradigms</span>
+        </div>
+      </li>
+      <li class="schedule-item break"><div class="schedule-time">12.45</div><div class="schedule-event">Lunch Break</div></li>
+      <li class="schedule-item">
+        <div class="schedule-time">14.00</div>
+        <div class="schedule-event">
+          <span class="speaker-name">Lucia Melloni</span><span class="speaker-affil">RUB</span>
+          <span class="talk-title">Testing Theories, Expanding Minds: A Roadmap for Consciousness Science</span>
+        </div>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-time">15.00</div>
+        <div class="schedule-event">
+          <span class="speaker-name">Johannes Kleiner</span><span class="speaker-affil">Bamberg</span>
+          <span class="talk-title">The Hard Problem in Light of Mathematical Consciousness Science</span>
+        </div>
+      </li>
+      <li class="schedule-item break"><div class="schedule-time">16.00</div><div class="schedule-event">Coffee Break</div></li>
+      <li class="schedule-item">
+        <div class="schedule-time">16.30</div>
+        <div class="schedule-event">
+          <span class="speaker-name">Axel Cleeremans</span><span class="speaker-affil">Brussels</span>
+          <span class="talk-title">The Value of Consciousness</span>
+        </div>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-time">17.30</div>
+        <div class="schedule-event">
+          <span class="speaker-name">Poster Session</span>
+          <span class="talk-title">With Early Career Researchers, plus a surprise on the Rooftop</span>
+        </div>
+      </li>
+      <li class="schedule-item break"><div class="schedule-time">20.00</div><div class="schedule-event">Dinner</div></li>
+    </ul>
+  </div>
+
+  <div class="day-panel" id="fri">
+    <ul class="schedule-list">
+      <li class="schedule-item">
+        <div class="schedule-time">09.00</div>
+        <div class="schedule-event">
+          <span class="speaker-name">Christian List</span><span class="speaker-affil">Munich</span>
+          <span class="talk-title">Consciousness and Objectivity</span>
+        </div>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-time">10.00</div>
+        <div class="schedule-event">
+          <span class="speaker-name">Tobias Schlicht</span><span class="speaker-affil">RUB</span>
+          <span class="talk-title">Organizational Invariance and Artificial Consciousness</span>
+        </div>
+      </li>
+      <li class="schedule-item break"><div class="schedule-time">11.00</div><div class="schedule-event">Coffee Break</div></li>
+      <li class="schedule-item">
+        <div class="schedule-time">11.30</div>
+        <div class="schedule-event">
+          <span class="speaker-name">Hedda Hassel Mørch</span><span class="speaker-affil">Inland Norway</span>
+          <span class="talk-title">An Argument based on Phenomenal Powers Against Reductive and Nonreductive Functionalism</span>
+        </div>
+      </li>
+      <li class="schedule-item break"><div class="schedule-time">12.30</div><div class="schedule-event">Lunch Break</div></li>
+      <li class="schedule-item">
+        <div class="schedule-time">13.30</div>
+        <div class="schedule-event">
+          <span class="speaker-name">François Kammerer</span><span class="speaker-affil">Strasbourg</span>
+          <span class="talk-title">Putting the Paradox of Phenomenal Judgment Back onto Its Feet</span>
+        </div>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-time">14.30</div>
+        <div class="schedule-event">
+          <span class="speaker-name">Liad Mudrik</span><span class="speaker-affil">Tel Aviv</span>
+          <span class="talk-title">Using Prediction Maps to Guide Theory-Testing in the Search for the Neural Basis of Consciousness</span>
+        </div>
+      </li>
+      <li class="schedule-item break"><div class="schedule-time">15.30</div><div class="schedule-event">Coffee Break</div></li>
+      <li class="schedule-item">
+        <div class="schedule-time">16.00</div>
+        <div class="schedule-event">
+          <span class="speaker-name">Anil Seth</span><span class="speaker-affil">Sussex</span>
+          <span class="talk-title">Prospects and Pitfalls for Real Artificial Consciousness</span>
+        </div>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-time">17.00</div>
+        <div class="schedule-event">
+          <span class="speaker-name">Roundtable</span>
+          <span class="talk-title">With David J. Chalmers</span>
+        </div>
+      </li>
+      <li class="schedule-item">
+        <div class="schedule-time">18.00</div>
+        <div class="schedule-event">
+          <span class="speaker-name">Closing Reflections</span>
+          <span class="talk-title">And Farewell</span>
+        </div>
+      </li>
+      <li class="schedule-item break"><div class="schedule-time">20.00</div><div class="schedule-event">Dinner</div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="speakers">
+  <div class="section-head">
+    <div class="section-num"><span>03</span>Speakers</div>
+    <h2 class="section-title">Ten voices in <em>philosophy & science</em>.</h2>
+  </div>
+  <div class="speakers-grid">
+    <div class="speaker-card"><div class="name">David J. Chalmers</div><div class="affil">NYU</div></div>
+    <div class="speaker-card"><div class="name">Axel Cleeremans</div><div class="affil">Brussels</div></div>
+    <div class="speaker-card"><div class="name">Keith Frankish</div><div class="affil">Crete</div></div>
+    <div class="speaker-card"><div class="name">François Kammerer</div><div class="affil">Strasbourg</div></div>
+    <div class="speaker-card"><div class="name">Johannes Kleiner</div><div class="affil">Bamberg</div></div>
+    <div class="speaker-card"><div class="name">Christian List</div><div class="affil">Munich</div></div>
+    <div class="speaker-card"><div class="name">Lucia Melloni</div><div class="affil">RUB</div></div>
+    <div class="speaker-card"><div class="name">Hedda Hassel Mørch</div><div class="affil">Inland Norway</div></div>
+    <div class="speaker-card"><div class="name">Liad Mudrik</div><div class="affil">Tel Aviv</div></div>
+    <div class="speaker-card"><div class="name">Martine Nida-Rümelin</div><div class="affil">Fribourg</div></div>
+    <div class="speaker-card"><div class="name">Tobias Schlicht</div><div class="affil">RUB</div></div>
+    <div class="speaker-card"><div class="name">Anil Seth</div><div class="affil">Sussex</div></div>
+  </div>
+</section>
+
+<section id="posters">
+  <div class="section-head">
+    <div class="section-num"><span>04</span>Posters</div>
+    <h2 class="section-title">Early-career <em>research</em>.</h2>
+  </div>
+  <p class="posters-intro">Twenty posters will be presented Thursday evening on the Kunstmuseum rooftop. Click to reveal titles.</p>
+
+  <details class="poster"><summary><span class="poster-author">Julian Braunwarth<span class="affil">Göttingen, B.A.</span></span></summary><div class="poster-title">The Fading and Dancing Qualia Argument: Does Consciousness Arise from Scale-Invariant Properties?</div></details>
+  <details class="poster"><summary><span class="poster-author">Kayla Carnation<span class="affil">Ruhr-Universität Bochum, B.A., M.Sc.</span></span></summary><div class="poster-title">Bodily Affect and Phenomenal Overflow: Extending the A/P Debate</div></details>
+  <details class="poster"><summary><span class="poster-author">Bruno Cortesi<span class="affil">IUSS Pavia, Ph.D.</span></span></summary><div class="poster-title">Zombie Worlds Are Inconceivable — But Physicalism Still Fails</div></details>
+  <details class="poster"><summary><span class="poster-author">Eduardo Estevão Quirino<span class="affil">University of Vechta</span></span></summary><div class="poster-title">Demonic Conceivability</div></details>
+  <details class="poster"><summary><span class="poster-author">Timothy Fuller<span class="affil">Independent researcher, B.A.</span></span></summary><div class="poster-title">Minimal Minds and Anthropocentric Bias: Rethinking the Starting Point of Consciousness Theory</div></details>
+  <details class="poster"><summary><span class="poster-author">Rony Hirschhorn<span class="affil">Tel Aviv University, Ph.D. candidate</span></span></summary><div class="poster-title">Public Intuition and the Functionalist Claims of The Conscious Mind</div></details>
+  <details class="poster"><summary><span class="poster-author">Ting Huan<span class="affil">Goethe-Universität Frankfurt, Ph.D. candidate</span></span></summary><div class="poster-title">The Architecture of Blame: Phenomenal Valence, and the Limits of Computational Agency</div></details>
+  <details class="poster"><summary><span class="poster-author">Mathis Immertreu, Achim Schilling & Patrick Krauss<span class="affil">FAU Erlangen-Nuremberg</span></span></summary><div class="poster-title">No Pressure, No Core: Environmental Difficulty and the Emergence of Damasio's Core Consciousness Precursors in RL Agents</div></details>
+  <details class="poster"><summary><span class="poster-author">Lukas Kob<span class="affil">Czech Academy of Sciences, Ph.D.</span></span></summary><div class="poster-title">Reconsidering Neural Replacement Scenarios Clarifies the Commitments of Biological Naturalism</div></details>
+  <details class="poster"><summary><span class="poster-author">Johan Largo<span class="affil">University of Luxembourg, Ph.D. candidate</span></span></summary><div class="poster-title">LLMs, Unconscious Thinking and Conscious Understanding</div></details>
+  <details class="poster"><summary><span class="poster-author">José Luis<span class="affil">University of St Andrews, Ph.D. candidate</span></span></summary><div class="poster-title">The Given and the Self-Luminous: Sellars, Candrakīrti, and the Temptation of Phenomenal Immediacy</div></details>
+  <details class="poster"><summary><span class="poster-author">Jakub Mihálik<span class="affil">Czech Academy of Sciences, Ph.D.</span></span></summary><div class="poster-title">Russellian Monism and the Possibility of Artificial Consciousness</div></details>
+  <details class="poster"><summary><span class="poster-author">Daniel Müller<span class="affil">University of Osnabrück, Ph.D. candidate</span></span></summary><div class="poster-title">Pangelonium Poetics — Illusionism Beyond the Phenomenal</div></details>
+  <details class="poster"><summary><span class="poster-author">Niccolò Negro & Albert Newen<span class="affil">Tel Aviv University · Ruhr-Universität Bochum</span></span></summary><div class="poster-title">Artificial Consciousness: Theoretical Speculation or Justified Expectation?</div></details>
+  <details class="poster"><summary><span class="poster-author">Alfred Olsen</span></summary><div class="poster-title">An Investigation of Premise 3 in Chalmers's Zombie Argument</div></details>
+  <details class="poster"><summary><span class="poster-author">Erik Schulz<span class="affil">Arizona State University, undergraduate</span></span></summary><div class="poster-title">On the Success of Reverse Conceivability Arguments</div></details>
+  <details class="poster"><summary><span class="poster-author">Ayush Srivastava<span class="affil">IIT Bombay, Ph.D. candidate</span></span></summary><div class="poster-title">Dreaming, Consciousness, and the Hard Problem: Revisiting Chalmers at 30</div></details>
+  <details class="poster"><summary><span class="poster-author">Yannik Steinebrunner<span class="affil">Universität Basel, Ph.D. candidate</span></span></summary><div class="poster-title">What Does It Mean to "Take Consciousness Seriously"?</div></details>
+  <details class="poster"><summary><span class="poster-author">Finn Thwaite<span class="affil">King's College London, Ph.D. candidate</span></span></summary><div class="poster-title">Consciousness, Reduction, and the Limits of Emergence</div></details>
+  <details class="poster"><summary><span class="poster-author">Victor Tremblay-Baillargeon<span class="affil">Université de Montréal / NYU, Ph.D. candidate</span></span></summary><div class="poster-title">The Everett Interpretation and Personal Identity</div></details>
+</section>
+
+<section id="venue">
+  <div class="section-head">
+    <div class="section-num"><span>05</span>Venue</div>
+    <h2 class="section-title">At the <em>Kunstmuseum</em>.</h2>
+  </div>
+  <div class="venue-grid">
+    <div class="info-block">
+      <h3>Location</h3>
+      <address>
+        Kunstmuseum Bochum<br>
+        Kortumstraße 147<br>
+        44787 Bochum, Germany
+      </address>
+      <p style="margin-top: 20px;">The Kunstmuseum sits in the center of Bochum, a short walk from the main train station.</p>
+    </div>
+    <div class="info-block">
+      <h3>Getting there</h3>
+      <p>From <strong>Bochum Main Train Station</strong>, take subway <strong>U308</strong> in the direction of Schürbankstraße and get off at <strong>Planetarium-Bochum</strong>. From there it is a 7-minute walk to the museum.</p>
+    </div>
+  </div>
+</section>
+
+<section id="register">
+  <div class="section-head">
+    <div class="section-num"><span>06</span>Register</div>
+    <h2 class="section-title">Free, but <em>seats are limited</em>.</h2>
+  </div>
+  <div class="info-block" style="max-width: 700px;">
+    <p>Participation is free of charge. To secure a seat, please register by email to <a href="mailto:Franziska.Klasen@rub.de?subject=Registration%20—%20The%20Conscious%20Mind%20at%2030">Franziska Klasen</a>.</p>
+    <p class="deadline">Registration deadline: 1 April 2026</p>
+    <a class="register-cta" href="mailto:Franziska.Klasen@rub.de?subject=Registration%20—%20The%20Conscious%20Mind%20at%2030">Register by email</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>The Conscious Mind at 30</h4>
+      <p>A workshop celebrating thirty years of David Chalmers' <em>The Conscious Mind. In Search of a Fundamental Theory</em> (Oxford University Press, 1996).</p>
+    </div>
+    <div>
+      <h4>Organizers</h4>
+      <p>Lucia Melloni<br>Tobias Schlicht</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p><a href="mailto:Franziska.Klasen@rub.de">Franziska.Klasen@rub.de</a></p>
+    </div>
+  </div>
+  <div class="copyright">© 2026 · Ruhr-Universität Bochum</div>
+</footer>
+
+<script>
+  // Day tab switching
+  const tabs = document.querySelectorAll('.day-tab');
+  const panels = document.querySelectorAll('.day-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.day).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
