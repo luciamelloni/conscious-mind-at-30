@@ -310,6 +310,15 @@
     color: var(--ink);
     margin-right: 8px;
   }
+  a.speaker-name {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  a.speaker-name:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
   .speaker-affil {
     color: var(--muted);
     font-size: 14px;
@@ -366,8 +375,7 @@
   .speaker-card .affil {
     font-size: 13px;
     color: var(--muted);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    letter-spacing: 0.02em;
   }
 
   /* ---------- POSTERS ---------- */
@@ -713,7 +721,7 @@
         <div class="schedule-time">09.15</div>
         <div class="schedule-event">
           <span class="chair">Lucia Melloni</span>
-          <span class="speaker-name">David J. Chalmers</span><span class="speaker-affil">NYU</span>
+          <span class="speaker-name">David J. Chalmers</span><span class="speaker-affil">New York University</span>
           <span class="talk-title">The Conscious Mind at 30. Looking back and looking forward</span>
         </div>
       </li>
@@ -722,7 +730,7 @@
         <div class="schedule-time">10.45</div>
         <div class="schedule-event">
           <span class="chair">Claudia Passos-Ferreira</span>
-          <span class="speaker-name">Martine Nida-Rümelin</span><span class="speaker-affil">Fribourg</span>
+          <span class="speaker-name">Martine Nida-Rümelin</span><span class="speaker-affil">University of Fribourg</span>
           <span class="talk-title">Easy Problems are Rare</span>
         </div>
       </li>
@@ -730,7 +738,7 @@
         <div class="schedule-time">11.45</div>
         <div class="schedule-event">
           <span class="chair">François Kammerer</span>
-          <span class="speaker-name">Keith Frankish</span><span class="speaker-affil">Crete</span>
+          <span class="speaker-name">Keith Frankish</span><span class="speaker-affil">University of Crete</span>
           <span class="talk-title">The Mystery of Chalmers and Dennett: A Tale of Two Paradigms</span>
         </div>
       </li>
@@ -739,7 +747,7 @@
         <div class="schedule-time">14.00</div>
         <div class="schedule-event">
           <span class="chair">Rony Hirschhorn</span>
-          <span class="speaker-name">Lucia Melloni</span><span class="speaker-affil">RUB</span>
+          <span class="speaker-name">Lucia Melloni</span><span class="speaker-affil">Ruhr-Universität Bochum</span>
           <span class="talk-title">Testing Theories, Expanding Minds: A Roadmap for Consciousness Science</span>
         </div>
       </li>
@@ -747,7 +755,7 @@
         <div class="schedule-time">15.00</div>
         <div class="schedule-event">
           <span class="chair">Lara Bräuchle</span>
-          <span class="speaker-name">Johannes Kleiner</span><span class="speaker-affil">Bamberg</span>
+          <span class="speaker-name">Johannes Kleiner</span><span class="speaker-affil">University of Bamberg</span>
           <span class="talk-title">The Hard Problem in Light of Mathematical Consciousness Science</span>
         </div>
       </li>
@@ -756,7 +764,7 @@
         <div class="schedule-time">16.30</div>
         <div class="schedule-event">
           <span class="chair">Krzysztof Dolega</span>
-          <span class="speaker-name">Axel Cleeremans</span><span class="speaker-affil">Brussels</span>
+          <span class="speaker-name">Axel Cleeremans</span><span class="speaker-affil">Université Libre de Bruxelles</span>
           <span class="talk-title">The Value of Consciousness</span>
         </div>
       </li>
@@ -764,7 +772,7 @@
         <div class="schedule-time">17.30</div>
         <div class="schedule-event">
           <span class="speaker-name">Poster Session</span>
-          <span class="talk-title">Early-career researchers on the rooftop · Virtual Reality surprise event</span>
+          <span class="talk-title">Early-career researchers on the rooftop · Cash bar with alcoholic and non-alcoholic drinks · Virtual Reality surprise event by Jan Schulten</span>
         </div>
       </li>
       <li class="schedule-item break"><div class="schedule-time">20.00</div><div class="schedule-event">Workshop Dinner · Restaurant Tapas, Bochum</div></li>
@@ -782,17 +790,17 @@
       <li class="schedule-item">
         <div class="schedule-time">09.00</div>
         <div class="schedule-event">
-          <span class="chair">Albert Newen</span>
-          <span class="speaker-name">Christian List</span><span class="speaker-affil">Munich</span>
-          <span class="talk-title">Consciousness and Objectivity</span>
+          <span class="chair">Maria Kasmirli</span>
+          <span class="speaker-name">Tobias Schlicht</span><span class="speaker-affil">Ruhr-Universität Bochum</span>
+          <span class="talk-title">Organizational Invariance and Artificial Consciousness</span>
         </div>
       </li>
       <li class="schedule-item">
         <div class="schedule-time">10.00</div>
         <div class="schedule-event">
-          <span class="chair">Maria Kasmirli</span>
-          <span class="speaker-name">Tobias Schlicht</span><span class="speaker-affil">RUB</span>
-          <span class="talk-title">Organizational Invariance and Artificial Consciousness</span>
+          <span class="chair">Albert Newen</span>
+          <a class="speaker-name" href="https://list.userweb.mwn.de/" target="_blank" rel="noopener">Christian List</a><span class="speaker-affil">LMU Munich</span>
+          <span class="talk-title">Consciousness and Objectivity</span>
         </div>
       </li>
       <li class="schedule-item break"><div class="schedule-time">11.00</div><div class="schedule-event">Coffee Break</div></li>
@@ -800,7 +808,7 @@
         <div class="schedule-time">11.30</div>
         <div class="schedule-event">
           <span class="chair">Tobias Schlicht</span>
-          <span class="speaker-name">Hedda Hassel Mørch</span><span class="speaker-affil">Inland Norway</span>
+          <span class="speaker-name">Hedda Hassel Mørch</span><span class="speaker-affil">Inland Norway University</span>
           <span class="talk-title">An Argument based on Phenomenal Powers Against Reductive and Non-Reductive Functionalism</span>
         </div>
       </li>
@@ -809,7 +817,7 @@
         <div class="schedule-time">13.30</div>
         <div class="schedule-event">
           <span class="chair">Leonard Dung</span>
-          <span class="speaker-name">François Kammerer</span><span class="speaker-affil">Strasbourg</span>
+          <span class="speaker-name">François Kammerer</span><span class="speaker-affil">CNRS, Strasbourg</span>
           <span class="talk-title">Putting the Paradox of Phenomenal Judgment Back onto Its Feet</span>
         </div>
       </li>
@@ -817,7 +825,7 @@
         <div class="schedule-time">14.30</div>
         <div class="schedule-event">
           <span class="chair">Niccolò Negro</span>
-          <span class="speaker-name">Liad Mudrik</span><span class="speaker-affil">Tel Aviv</span>
+          <a class="speaker-name" href="https://en-social-sciences.tau.ac.il/profile/mudrikli" target="_blank" rel="noopener">Liad Mudrik</a><span class="speaker-affil">Tel Aviv University</span>
           <span class="talk-title">Using Prediction Maps to Guide Theory-Testing in the Search for the Neural Basis of Consciousness</span>
         </div>
       </li>
@@ -826,7 +834,7 @@
         <div class="schedule-time">16.00</div>
         <div class="schedule-event">
           <span class="chair">Liberty Severs</span>
-          <span class="speaker-name">Anil Seth</span><span class="speaker-affil">Sussex</span>
+          <span class="speaker-name">Anil Seth</span><span class="speaker-affil">University of Sussex</span>
           <span class="talk-title">Prospects and Pitfalls for Real Artificial Consciousness</span>
         </div>
       </li>
@@ -850,18 +858,18 @@
     <h2 class="section-title">Ten voices in <em>philosophy & science</em>.</h2>
   </div>
   <div class="speakers-grid">
-    <div class="speaker-card"><div class="name">David J. Chalmers</div><div class="affil">NYU</div></div>
-    <div class="speaker-card"><div class="name">Axel Cleeremans</div><div class="affil">Brussels</div></div>
-    <div class="speaker-card"><div class="name">Keith Frankish</div><div class="affil">Crete</div></div>
-    <div class="speaker-card"><div class="name">François Kammerer</div><div class="affil">Strasbourg</div></div>
-    <div class="speaker-card"><div class="name">Johannes Kleiner</div><div class="affil">Bamberg</div></div>
-    <div class="speaker-card"><div class="name">Christian List</div><div class="affil">Munich</div></div>
-    <div class="speaker-card"><div class="name">Lucia Melloni</div><div class="affil">RUB</div></div>
-    <div class="speaker-card"><div class="name">Hedda Hassel Mørch</div><div class="affil">Inland Norway</div></div>
-    <div class="speaker-card"><div class="name">Liad Mudrik</div><div class="affil">Tel Aviv</div></div>
-    <div class="speaker-card"><div class="name">Martine Nida-Rümelin</div><div class="affil">Fribourg</div></div>
-    <div class="speaker-card"><div class="name">Tobias Schlicht</div><div class="affil">RUB</div></div>
-    <div class="speaker-card"><div class="name">Anil Seth</div><div class="affil">Sussex</div></div>
+    <div class="speaker-card"><div class="name">David J. Chalmers</div><div class="affil">New York University</div></div>
+    <div class="speaker-card"><div class="name">Axel Cleeremans</div><div class="affil">Université Libre de Bruxelles</div></div>
+    <div class="speaker-card"><div class="name">Keith Frankish</div><div class="affil">University of Crete</div></div>
+    <div class="speaker-card"><div class="name">François Kammerer</div><div class="affil">CNRS, Strasbourg</div></div>
+    <div class="speaker-card"><div class="name">Johannes Kleiner</div><div class="affil">University of Bamberg</div></div>
+    <div class="speaker-card"><div class="name">Christian List</div><div class="affil">LMU Munich</div></div>
+    <div class="speaker-card"><div class="name">Lucia Melloni</div><div class="affil">Ruhr-Universität Bochum</div></div>
+    <div class="speaker-card"><div class="name">Hedda Hassel Mørch</div><div class="affil">Inland Norway University</div></div>
+    <div class="speaker-card"><div class="name">Liad Mudrik</div><div class="affil">Tel Aviv University</div></div>
+    <div class="speaker-card"><div class="name">Martine Nida-Rümelin</div><div class="affil">University of Fribourg</div></div>
+    <div class="speaker-card"><div class="name">Tobias Schlicht</div><div class="affil">Ruhr-Universität Bochum</div></div>
+    <div class="speaker-card"><div class="name">Anil Seth</div><div class="affil">University of Sussex</div></div>
   </div>
 </section>
 
